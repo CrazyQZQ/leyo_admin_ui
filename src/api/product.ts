@@ -1,4 +1,5 @@
 import request from '@/utils/request'
+import { Product } from '@/types/product'
 
 /**
  * 查询品类列表
@@ -62,6 +63,28 @@ export const productInfo = (params: any) =>
     url: '/product/info',
     method: 'get',
     params
+  })
+
+/**
+ * 新增商品
+ * @param data
+ */
+export const addProduct = (data: Product) =>
+  request({
+    url: '/product/add',
+    method: 'put',
+    data
+  })
+
+/**
+* 修改商品
+* @param data
+*/
+export const updateProduct = (data: Product) =>
+  request({
+    url: '/product/update',
+    method: 'post',
+    data
   })
 
 /**
